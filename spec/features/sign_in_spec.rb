@@ -6,6 +6,6 @@ RSpec.feature 'Sign in' do
   background { sign_in_user(user) }
 
   scenario 'should sign in the user with valid credentials' do
-    expect(page).to have_content 'Connecté(e) avec succès.'
+    expect(page).to have_content('Connecté(e) avec succès.')
   end
 end

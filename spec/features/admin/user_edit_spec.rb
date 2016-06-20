@@ -6,17 +6,17 @@ RSpec.feature 'User edit' do
 
   background do
     sign_in_user(admin)
-    visit "/admin/users/#{user.id}"
+    visit("/admin/users/#{user.id}")
 
-    click_on "Modifier l'utilisateur"
+    click_on("Modifier l'utilisateur")
 
-    fill_in 'Nom', with: 'Kerbal'
-    click_on 'Mettre à jour'
+    fill_in('Nom', with: 'Kerbal')
+    click_on('Mettre à jour')
   end
 
   scenario 'should update the user profile with given data' do
     expect(page.current_path).to eq admin_user_path(user)
-    expect(page).to have_selector 'p.alert.alert-success'
-    expect(page).to have_content 'Kerbal'
+    expect(page).to have_selector('p.alert.alert-success')
+    expect(page).to have_content('Kerbal')
   end
 end
